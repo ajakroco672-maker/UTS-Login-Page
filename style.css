@@ -1,0 +1,332 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #3b3dbf;
+  --primary-hover: #2b2d99;
+  --text-dark: #0f172a;
+  --text-muted: #475569;
+  --border-color: #cbd5e1;
+  --font-main: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: #ffffff;
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Base Layout Split-Screen (Selalu Samping-sampingan di HP maupun Desktop) */
+.login-wrapper {
+  display: flex;
+  flex-direction: row; /* Selalu berdampingan: Kiri Form, Kanan Ilustrasi */
+  width: 100%;
+  min-height: 100vh;
+}
+
+.login-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+  background-color: #ffffff;
+}
+
+.illustration-section {
+  flex: 1;
+  background: linear-gradient(135deg, #f0f4ff 0%, #e5ecff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+/* Styling Form Login */
+.login-container {
+  width: 100%;
+  max-width: 420px;
+}
+
+.brand-header {
+  margin-bottom: 2rem;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.sub-greeting {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.main-title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-dark);
+}
+
+.btn-sso {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.divider-container {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+.divider-text {
+  padding: 0 1rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.input-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.925rem;
+  color: var(--text-dark);
+  outline: none;
+}
+
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 1.75rem;
+  cursor: pointer;
+  user-select: none;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #fff;
+  border: 1.5px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.forgot-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.register-prompt {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.register-link {
+  color: var(--primary-color);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.legal-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.legal-footer a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.bullet-dot {
+  font-size: 0.5rem;
+}
+
+/* Artwork Container (Selalu Muncul) */
+.abstract-art-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  max-height: 600px;
+  overflow: hidden;
+  display: block;
+}
+
+.shape {
+  position: absolute;
+}
+
+.circle { border-radius: 50%; }
+.circle-gradient-1 { width: 130px; height: 130px; background: linear-gradient(135deg, #818cf8, #4f46e5); top: 30%; left: 20%; }
+.circle-gradient-2 { width: 180px; height: 180px; background: linear-gradient(135deg, #60a5fa, #3b82f6); bottom: 18%; right: 15%; opacity: 0.85; }
+.circle-gradient-3 { width: 100px; height: 100px; background: linear-gradient(135deg, #a7f3d0, #a5b4fc); bottom: 10%; left: 25%; opacity: 0.7; }
+.circle-outline-1 { width: 190px; height: 190px; border: 1.5px solid #94a3b8; top: 18%; left: 14%; opacity: 0.4; }
+.circle-outline-2 { width: 120px; height: 120px; border: 1.5px solid #64748b; top: 10%; right: 12%; opacity: 0.35; }
+.circle-outline-3 { width: 45px; height: 45px; border: 1.5px solid #64748b; bottom: 15%; right: 10%; opacity: 0.5; }
+.circle-small-1 { width: 40px; height: 40px; background-color: #818cf8; top: 16%; left: 36%; }
+.circle-small-2 { width: 32px; height: 32px; border: 1.5px solid #64748b; top: 50%; left: 14%; opacity: 0.6; }
+
+.rect-vertical-1 { width: 80px; height: 200px; background: linear-gradient(180deg, #60a5fa, #3b82f6); top: 15%; right: 25%; border-radius: 4px; }
+.rect-vertical-2 { width: 70px; height: 150px; background-color: rgba(191, 219, 254, 0.6); top: 24%; right: 20%; backdrop-filter: blur(4px); }
+.rect-horizontal-1 { width: 220px; height: 80px; background: linear-gradient(90deg, #3b82f6, #2563eb); bottom: 30%; left: 30%; border-radius: 6px; opacity: 0.9; }
+.rect-horizontal-2 { width: 140px; height: 60px; background-color: rgba(224, 231, 255, 0.7); top: 35%; right: 5%; }
+.rect-square-1 { width: 120px; height: 120px; background-color: rgba(96, 165, 250, 0.3); bottom: 22%; left: 12%; backdrop-filter: blur(6px); }
+.rect-pill-1 { width: 130px; height: 120px; background-color: rgba(219, 234, 254, 0.5); top: 52%; left: -2%; }
+
+/* Penyesuaian Skala Ilustrasi di Layar Kecil / HP */
+@media (max-width: 767px) {
+  .login-section {
+    padding: 1.5rem 1rem;
+  }
+  
+  .abstract-art-container {
+    transform: scale(0.65); /* Skala visual disesuaikan agar tetap proporsional di HP */
+    transform-origin: center center;
+  }
+}
